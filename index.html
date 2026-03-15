@@ -1,0 +1,969 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MOS Maritime Group Limited</title>
+  <meta name="description" content="MOS Maritime Group Limited — Offshore Commercial Diving Strategy & Progression Advisory." />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z46GGZNB6V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z46GGZNB6V');
+  </script>
+
+  <style>
+    :root{
+      --bg:#07090c;
+      --bg-2:#0b1118;
+      --panel:#0d141c;
+      --panel-2:#101925;
+      --line:rgba(255,255,255,.10);
+      --line-2:rgba(255,255,255,.16);
+      --text:#f2f5f8;
+      --muted:rgba(255,255,255,.72);
+      --muted-2:rgba(255,255,255,.56);
+      --accent:#c53030;
+      --accent-2:#8f1f1f;
+      --gold:#f2c14e;
+      --shadow:0 18px 44px rgba(0,0,0,.45);
+      --shadow-2:0 24px 60px rgba(0,0,0,.58);
+      --radius:18px;
+      --radius-lg:24px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 650px at 12% -10%, rgba(197,48,48,.16), transparent 60%),
+        radial-gradient(900px 500px at 90% 4%, rgba(242,193,78,.06), transparent 55%),
+        linear-gradient(180deg, var(--bg), #05070a 60%, #07090c);
+      line-height:1.6;
+      letter-spacing:.15px;
+    }
+
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(var(--max), calc(100% - 40px)); margin:0 auto}
+    .section{padding:28px 0}
+    .section-tight{padding-top:20px}
+    .eyebrow{
+      display:inline-block;
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:1.8px;
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+
+    /* NAV */
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(16px);
+      background:rgba(7,9,12,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:13px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.9px;
+      white-space:nowrap;
+    }
+    .brand-mark{
+      width:11px;
+      height:11px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow:0 0 0 5px rgba(197,48,48,.12);
+    }
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap:8px;
+    }
+    .nav-links a{
+      color:var(--muted);
+      font-size:13px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+      transition:.2s ease;
+    }
+    .nav-links a:hover{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.04);
+    }
+
+    /* HERO */
+    .hero{
+      padding:18px 0 10px;
+    }
+    .hero-card{
+      position:relative;
+      min-height:54vh;
+      max-height:700px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      background:#0b1016;
+      box-shadow:var(--shadow-2);
+    }
+    .hero-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 52%;
+      transform:scale(1.01);
+      filter:saturate(1.06) contrast(1.03);
+    }
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:flex-end;
+      padding:26px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.72) 62%, rgba(0,0,0,.9)),
+        radial-gradient(900px 500px at 20% 0%, rgba(197,48,48,.20), transparent 55%);
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(30px, 4.4vw, 52px);
+      line-height:1.02;
+      letter-spacing:.3px;
+      max-width:760px;
+    }
+    .lead{
+      margin:0;
+      max-width:760px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .cta{
+      margin-top:16px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 16px;
+      border-radius:999px;
+      border:1px solid var(--line-2);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-size:14px;
+      font-weight:800;
+      transition:.2s ease;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(0,0,0,.22);
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.07);
+      border-color:rgba(197,48,48,.45);
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(197,48,48,.30), rgba(143,31,31,.16));
+      border-color:rgba(197,48,48,.55);
+    }
+    .hero-stats{
+      margin-top:16px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .stat{
+      padding:8px 11px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      color:rgba(255,255,255,.78);
+      font-size:12px;
+      font-weight:700;
+    }
+
+    /* GENERIC */
+    .panel{
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.025));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .panel-inner{padding:22px}
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size:18px;
+      letter-spacing:.7px;
+      text-transform:uppercase;
+    }
+    .section-head span{
+      color:var(--muted-2);
+      font-size:13px;
+    }
+
+    /* ABOUT */
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:22px;
+      align-items:center;
+    }
+    .about-copy p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .points{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .pill{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:rgba(255,255,255,.82);
+      font-size:12px;
+      font-weight:700;
+    }
+    .about-image-wrap{
+      position:relative;
+    }
+    .about-image{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-2);
+      min-height:360px;
+      background:#090d12;
+    }
+    .about-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .about-badge{
+      position:absolute;
+      left:16px;
+      bottom:16px;
+      display:inline-block;
+      padding:10px 12px;
+      border-radius:14px;
+      background:rgba(7,9,12,.78);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(8px);
+      color:#fff;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.5px;
+      text-transform:uppercase;
+    }
+
+    /* SERVICES + PRICING */
+    .cards,
+    .pricing{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .card,
+    .price,
+    .box{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+      padding:18px;
+      box-shadow:var(--shadow);
+      transition:.2s ease;
+    }
+    .card:hover,
+    .price:hover,
+    .box:hover{
+      transform:translateY(-2px);
+      border-color:rgba(255,255,255,.18);
+    }
+    .card h3,
+    .price h3,
+    .box h3{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:.45px;
+      text-transform:uppercase;
+    }
+    .card p,
+    .box p{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .card ul,
+    .price ul,
+    .book-copy ul{
+      margin:0;
+      padding:0 0 0 18px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .card li,
+    .price li,
+    .book-copy li{margin:6px 0}
+    .price.featured{
+      outline:2px solid rgba(197,48,48,.42);
+      background:
+        linear-gradient(135deg, rgba(197,48,48,.12), rgba(255,255,255,.02));
+    }
+    .tag{
+      margin-bottom:2px;
+      font-size:24px;
+      font-weight:950;
+      letter-spacing:.3px;
+      color:#fff;
+    }
+    .sub{
+      margin:0 0 10px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .note{
+      margin-top:14px;
+      padding-left:12px;
+      border-left:3px solid rgba(197,48,48,.55);
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* BOOK */
+    .book-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:24px;
+      align-items:center;
+    }
+    .book-cover{
+      text-align:center;
+    }
+    .book-cover img{
+      width:100%;
+      max-width:320px;
+      margin:0 auto;
+      border-radius:16px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-2);
+    }
+    .book-copy p{
+      margin:0 0 12px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* BOOKING */
+    .booking-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      align-items:start;
+    }
+    .btn-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    /* GALLERY */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:14px;
+    }
+    .tile{
+      position:relative;
+      min-height:230px;
+      overflow:hidden;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:#0a0d12;
+      box-shadow:var(--shadow);
+    }
+    .tile img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transform:scale(1.02);
+      transition:transform .35s ease;
+    }
+    .tile:hover img{transform:scale(1.06)}
+    .cap{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      padding:12px;
+      background:linear-gradient(180deg, transparent, rgba(0,0,0,.82));
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .cap b{
+      display:block;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.45px;
+    }
+    .cap small{
+      display:block;
+      margin-top:2px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .span-4{grid-column:span 4}
+    .span-6{grid-column:span 6}
+
+    /* CONTACT */
+    footer{
+      margin-top:22px;
+      padding:28px 0 38px;
+      border-top:1px solid var(--line);
+      background:rgba(0,0,0,.12);
+    }
+    .foot{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:flex-start;
+    }
+    .foot b{
+      display:block;
+      margin-bottom:8px;
+      font-size:12px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+    }
+    .foot p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.7;
+    }
+    .contact a{
+      color:rgba(255,255,255,.88);
+      border-bottom:1px solid rgba(197,48,48,.35);
+    }
+
+    /* REVEAL */
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .75s ease, transform .75s ease;
+      will-change:opacity, transform;
+    }
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 980px){
+      .about-grid,
+      .cards,
+      .pricing,
+      .book-grid,
+      .booking-grid{
+        grid-template-columns:1fr;
+      }
+      .span-4,
+      .span-6{
+        grid-column:span 12;
+      }
+      .hero-card{
+        min-height:50vh;
+      }
+      .about-image{
+        min-height:320px;
+      }
+    }
+
+    @media (max-width: 720px){
+      .wrap{width:min(var(--max), calc(100% - 28px))}
+      .nav-links{gap:6px}
+      .nav-links a{
+        padding:6px 8px;
+        font-size:12px;
+      }
+      h1{font-size:34px}
+      .hero-card{min-height:46vh}
+      .hero-overlay{padding:18px}
+      .points{grid-template-columns:1fr}
+      .section{padding:22px 0}
+      .panel-inner{padding:18px}
+      .tile{min-height:220px}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .reveal{
+        opacity:1;
+        transform:none;
+        transition:none;
+      }
+      .tile img{transition:none}
+      .btn:hover,
+      .card:hover,
+      .price:hover,
+      .box:hover{transform:none}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        MOS Maritime Group Limited
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#book">Book</a>
+        <a href="#booking">Booking</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-card reveal">
+        <img src="vessel-stern-platform-view.jpg" alt="Offshore vessel and platform view" />
+        <div class="hero-overlay">
+          <div>
+            <div class="eyebrow">Offshore • Commercial Diving • Saturation</div>
+            <h1>MOS Maritime Group Limited</h1>
+            <p class="lead">
+              Structured offshore advisory for people entering commercial diving, positioning toward offshore work, and planning long-term saturation progression.
+            </p>
+            <div class="cta">
+              <a class="btn primary" href="#packages">View Pricing</a>
+              <a class="btn" href="#booking">Intake / Booking</a>
+              <a class="btn" href="#book">Buy the Book</a>
+            </div>
+            <div class="hero-stats">
+              <span class="stat">1:1 Advisory</span>
+              <span class="stat">Professional Consultation</span>
+              <span class="stat">Structured Pathway Strategy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="section section-tight">
+    <div class="wrap">
+      <div class="panel reveal">
+        <div class="panel-inner about-grid">
+          <div class="about-copy">
+            <div class="section-head">
+              <h2>About</h2>
+              <span>Real-world context, not theory</span>
+            </div>
+            <p>
+              MOS Maritime Group Limited provides structured advisory for aspiring and developing offshore commercial divers.
+              The focus is pathway clarity, cost control, sequencing, and realistic offshore positioning.
+            </p>
+            <p>
+              This is designed for people who want to avoid expensive mistakes, stop relying on guesswork, and make better decisions before committing serious money to training and tickets.
+            </p>
+            <p>
+              Advisory only — no recruitment representation, no employment placement, and no work guarantees.
+            </p>
+
+            <div class="points">
+              <div class="pill">Entry pathway structuring</div>
+              <div class="pill">Offshore career positioning</div>
+              <div class="pill">Saturation progression planning</div>
+              <div class="pill">Cost and risk exposure control</div>
+            </div>
+          </div>
+
+          <div class="about-image-wrap">
+            <div class="about-image">
+              <img src="offshore-platform.jpg" alt="Offshore platform at sunset" />
+            </div>
+            <div class="about-badge">Offshore Reality</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Services</h2>
+        <span>Structured advisory only</span>
+      </div>
+
+      <div class="cards">
+        <article class="card reveal">
+          <h3>Entry Pathway Strategy</h3>
+          <p>For people considering commercial dive training who need clarity before committing money.</p>
+          <ul>
+            <li>Training route structure</li>
+            <li>Medical and certification sequencing</li>
+            <li>Realistic employability timeline</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <h3>Offshore Career Positioning</h3>
+          <p>For qualified divers who want to position correctly for offshore and longer-term progression.</p>
+          <ul>
+            <li>Gap identification</li>
+            <li>Capability alignment</li>
+            <li>Structured 3–5 year plan</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <h3>Saturation Progression Advisory</h3>
+          <p>For experienced divers targeting a realistic long-term path toward saturation work.</p>
+          <ul>
+            <li>Progression sequencing</li>
+            <li>Readiness review</li>
+            <li>Timing and financial considerations</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="note reveal">
+        All services are advisory. They are designed to improve decision quality before costly mistakes are made.
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Packages</h2>
+        <span>Visible pricing</span>
+      </div>
+
+      <div class="pricing">
+        <article class="price reveal">
+          <h3>Entry Pathway Strategy</h3>
+          <div class="tag">$450 NZD</div>
+          <div class="sub">60 minutes</div>
+          <ul>
+            <li>Live strategy session</li>
+            <li>Pathway clarity + sequencing</li>
+            <li>48-hour follow-up Q&amp;A</li>
+          </ul>
+          <a class="btn primary" href="#booking">Book / Intake</a>
+        </article>
+
+        <article class="price featured reveal">
+          <h3>Offshore Career Positioning</h3>
+          <div class="tag">$450 NZD</div>
+          <div class="sub">60 minutes</div>
+          <ul>
+            <li>Gap identification</li>
+            <li>Positioning and next steps</li>
+            <li>3–5 year progression map</li>
+          </ul>
+          <a class="btn primary" href="#booking">Book / Intake</a>
+        </article>
+
+        <article class="price reveal">
+          <h3>Saturation Progression Advisory</h3>
+          <div class="tag">$550 NZD</div>
+          <div class="sub">90 minutes</div>
+          <ul>
+            <li>Readiness and sequencing review</li>
+            <li>Timing and constraints</li>
+            <li>Longer-term strategy</li>
+          </ul>
+          <a class="btn primary" href="#booking">Book / Intake</a>
+        </article>
+      </div>
+
+      <div class="pricing" style="margin-top:14px">
+        <article class="price reveal">
+          <h3>Mentorship Programme</h3>
+          <div class="tag">$1,500 NZD</div>
+          <div class="sub">3 months</div>
+          <ul>
+            <li>Initial deep strategy session</li>
+            <li>Monthly progression reviews</li>
+            <li>Ongoing positioning oversight</li>
+          </ul>
+          <a class="btn primary" href="#booking">Enquire / Intake</a>
+        </article>
+
+        <article class="price reveal">
+          <h3>Entry Blueprint (Digital)</h3>
+          <div class="tag">$197 NZD</div>
+          <div class="sub">Self-paced</div>
+          <ul>
+            <li>Costs and sequencing overview</li>
+            <li>Risk and spend control</li>
+            <li>Decision clarity without a live call</li>
+          </ul>
+          <a class="btn primary" href="#book">View Book</a>
+        </article>
+
+        <article class="price reveal">
+          <h3>Custom Scope</h3>
+          <div class="tag">Quote</div>
+          <div class="sub">Defined deliverable</div>
+          <ul>
+            <li>Structured documents / planning support</li>
+            <li>Review and correction work</li>
+            <li>Client-facing wording support</li>
+          </ul>
+          <a class="btn primary" href="#contact">Request Quote</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="section">
+    <div class="wrap">
+      <div class="panel reveal">
+        <div class="panel-inner book-grid">
+          <div class="book-cover">
+            <img src="offshore-entry-blueprint-cover.jpg" alt="The Offshore Entry Blueprint book cover" />
+          </div>
+
+          <div class="book-copy">
+            <div class="section-head">
+              <h2>Book</h2>
+              <span>Now live on Amazon</span>
+            </div>
+
+            <p><strong>The Offshore Entry Blueprint</strong></p>
+            <p>
+              What it actually takes to get hired in commercial diving and offshore oil &amp; gas.
+            </p>
+            <p>
+              A direct, real-world guide for aspiring divers and offshore candidates who want clarity before spending serious money on training, tickets, and the wrong pathway.
+            </p>
+
+            <ul>
+              <li>Understand how the offshore industry really works</li>
+              <li>Avoid the most expensive mistakes new entrants make</li>
+              <li>Get a realistic picture of timing, training and employability</li>
+            </ul>
+
+            <div class="btn-row">
+              <a class="btn primary" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/dp/B0GSJCZPX8">Buy on Amazon</a>
+              <a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/dp/B0GSJCZPX8">View Book Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Intake &amp; Booking</h2>
+        <span>Clean workflow</span>
+      </div>
+
+      <div class="booking-grid">
+        <div class="box reveal">
+          <h3>Step 1 — Complete Intake Form</h3>
+          <p>
+            Complete the intake form before requesting a booking. This keeps the session focused and avoids wasted time.
+          </p>
+
+          <div class="btn-row">
+            <a class="btn primary" target="_blank" rel="noopener"
+               href="https://docs.google.com/forms/d/e/1FAIpQLSeSpxev_UfEV0Hw6tYVcZffNSK2UAm0CsCRLTsDPu50dBk4Pg/viewform?usp=dialog">
+              Open Intake Form
+            </a>
+          </div>
+
+          <div class="note">
+            The form opens in a new tab for a cleaner and more premium experience.
+          </div>
+        </div>
+
+        <div class="box reveal">
+          <h3>Step 2 — Book by Email</h3>
+          <p>
+            After submitting the intake form, choose your package and send the booking request.
+          </p>
+
+          <div class="btn-row">
+            <a class="btn"
+               href="mailto:matt@mosmaritimegroup.co.nz?subject=Booking%20Request%20-%20Entry%20Pathway%20Strategy%20($450%20NZD)&body=Hi%20Matt%2C%0A%0AI%20have%20completed%20the%20intake%20form.%0A%0AI%20want%20to%20book%20Entry%20Pathway%20Strategy%20(%24450%20NZD).%0A%0APlease%20send%20payment%20instructions%20and%20the%20next%20available%20times.%0A%0AName%3A%0APhone%3A%0ATimezone%3A%0APreferred%20times%3A%0A">
+              Entry Strategy
+            </a>
+
+            <a class="btn"
+               href="mailto:matt@mosmaritimegroup.co.nz?subject=Booking%20Request%20-%20Offshore%20Career%20Positioning%20($450%20NZD)&body=Hi%20Matt%2C%0A%0AI%20have%20completed%20the%20intake%20form.%0A%0AI%20want%20to%20book%20Offshore%20Career%20Positioning%20(%24450%20NZD).%0A%0APlease%20send%20payment%20instructions%20and%20the%20next%20available%20times.%0A%0AName%3A%0APhone%3A%0ATimezone%3A%0APreferred%20times%3A%0A">
+              Offshore Positioning
+            </a>
+
+            <a class="btn"
+               href="mailto:matt@mosmaritimegroup.co.nz?subject=Booking%20Request%20-%20Saturation%20Progression%20Advisory%20($550%20NZD)&body=Hi%20Matt%2C%0A%0AI%20have%20completed%20the%20intake%20form.%0A%0AI%20want%20to%20book%20Saturation%20Progression%20Advisory%20(%24550%20NZD).%0A%0APlease%20send%20payment%20instructions%20and%20the%20next%20available%20times.%0A%0AName%3A%0APhone%3A%0ATimezone%3A%0APreferred%20times%3A%0A">
+              Saturation Advisory
+            </a>
+          </div>
+
+          <div class="note">
+            Payment is confirmed before session time is locked in.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Gallery</h2>
+        <span>Selected operational imagery</span>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="tile span-4 reveal">
+          <img src="platform-flare-wide.jpg" alt="Platform flare wide" />
+          <div class="cap"><b>Energy Sector</b><small>Offshore infrastructure</small></div>
+        </div>
+
+        <div class="tile span-4 reveal">
+          <img src="diver-tending.jpg" alt="Diver tending on deck" />
+          <div class="cap"><b>Topside Control</b><small>Real deck operations</small></div>
+        </div>
+
+        <div class="tile span-4 reveal">
+          <img src="deck-operations-day.jpg" alt="Deck operations day" />
+          <div class="cap"><b>Deck Execution</b><small>Worksite environment</small></div>
+        </div>
+
+        <div class="tile span-6 reveal">
+          <img src="underwater-valve-work.jpg" alt="Underwater valve work" />
+          <div class="cap"><b>Underwater Tasking</b><small>Technical delivery</small></div>
+        </div>
+
+        <div class="tile span-6 reveal">
+          <img src="industrial-deck-load.jpg" alt="Industrial deck load" />
+          <div class="cap"><b>Industrial Load</b><small>Heavy marine context</small></div>
+        </div>
+
+        <div class="tile span-4 reveal">
+          <img src="kirby-helmet-close.jpg" alt="Kirby helmet close up" />
+          <div class="cap"><b>Kit &amp; Systems</b><small>Operational detail</small></div>
+        </div>
+
+        <div class="tile span-4 reveal">
+          <img src="deck-dive-basket-crew.jpg" alt="Deck dive basket crew" />
+          <div class="cap"><b>Basket Ops</b><small>Deck coordination</small></div>
+        </div>
+
+        <div class="tile span-4 reveal">
+          <img src="sat-chamber-corridor.jpg" alt="Saturation chamber corridor" />
+          <div class="cap"><b>Saturation</b><small>Chamber corridor</small></div>
+        </div>
+
+        <div class="tile span-4 reveal">
+          <img src="sat-chamber-interior.jpg" alt="Saturation chamber interior" />
+          <div class="cap"><b>Saturation</b><small>Chamber interior</small></div>
+        </div>
+
+        <div class="tile span-4 reveal">
+          <img src="sat-chamber-hatch-view.jpg" alt="Chamber hatch view" />
+          <div class="cap"><b>Saturation</b><small>Hatch / access</small></div>
+        </div>
+
+        <div class="tile span-4 reveal">
+          <img src="platform-night.jpg" alt="Offshore platform at night" />
+          <div class="cap"><b>Night Ops</b><small>Industrial scale</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="wrap foot reveal">
+      <div>
+        <b>MOS Maritime Group Limited</b>
+        <p>Offshore Commercial Diving Strategy &amp; Progression Advisory</p>
+        <p style="margin-top:8px;color:rgba(255,255,255,.55);font-size:12px">
+          Advisory services only. No employment placement or work guarantees.
+        </p>
+      </div>
+
+      <div class="contact">
+        <b>Contact</b>
+        <p>Phone: <a href="tel:+6421712442">+64 21 712442</a></p>
+        <p>Email: <a href="mailto:matt@mosmaritimegroup.co.nz">matt@mosmaritimegroup.co.nz</a></p>
+        <p>Website: <a href="https://mosmaritimegroup.co.nz" target="_blank" rel="noopener">mosmaritimegroup.co.nz</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const els = Array.from(document.querySelectorAll('.reveal'));
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(el => el.classList.add('visible'));
+        return;
+      }
+      const io = new IntersectionObserver((entries, obs) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+
+</body>
+</html>
