@@ -1,949 +1,483 @@
 <!doctype html>
-
-<html lang="en">
-
+<html lang="en-NZ">
 <head>
-
-  <meta charset="utf-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>MOS Maritime Group Limited</title>
-
-  <meta name="description" content="Offshore Commercial Diving Strategy & Progression Advisory — MOS Maritime Group Limited">
-
-  <style>
-
-    :root{
-
-      --bg:#0B1620;
-
-      --panel:#0F2433;
-
-      --panel2:#0D1E2B;
-
-      --text:#E7EEF6;
-
-      --muted:#9FB4C8;
-
-      --gold:#C6A75E;
-
-      --gold2:#B8933F;
-
-      --border:rgba(90,130,160,.25);
-
-      --shadow:0 12px 34px rgba(0,0,0,.35);
-
-      --radius:16px;
-
-      --max:1150px;
-
-      --headerH:78px;
-
-    }
-
-    *{box-sizing:border-box}
-
-    html{scroll-behavior:smooth}
-
-    body{
-
-      margin:0;
-
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-
-      background:var(--bg);
-
-      color:var(--text);
-
-      line-height:1.6;
-
-      -webkit-font-smoothing:antialiased;
-
-      text-rendering:optimizeLegibility;
-
-    }
-
-    a{color:inherit;text-decoration:none}
-
-    /* Layout */
-
-    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
-
-    .section{
-
-      padding:96px 0;
-
-      scroll-margin-top:calc(var(--headerH) + 18px); /* fixes sticky header overlap */
-
-    }
-
-    /* Header / Nav */
-
-    .header{
-
-      position:sticky;
-
-      top:0;
-
-      z-index:999;
-
-      height:var(--headerH);
-
-      background:rgba(8,16,24,.92);
-
-      backdrop-filter:blur(10px);
-
-      -webkit-backdrop-filter:blur(10px);
-
-      border-bottom:1px solid var(--border);
-
-    }
-
-    .nav{
-
-      height:var(--headerH);
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:space-between;
-
-      gap:18px;
-
-    }
-
-    .brand{
-
-      font-weight:900;
-
-      letter-spacing:.25px;
-
-      font-size:14px;
-
-      white-space:nowrap;
-
-    }
-
-    .navlinks{
-
-      display:flex;
-
-      align-items:center;
-
-      gap:20px;
-
-      flex-wrap:wrap;
-
-      justify-content:flex-end;
-
-    }
-
-    .navlinks a{
-
-      font-weight:700;
-
-      font-size:14px;
-
-      color:var(--muted);
-
-      padding:8px 10px;
-
-      border-radius:10px;
-
-    }
-
-    .navlinks a:hover{
-
-      background:rgba(255,255,255,.06);
-
-      color:var(--text);
-
-    }
-
-    /* Buttons */
-
-    .btn{
-
-      display:inline-block;
-
-      padding:12px 18px;
-
-      border-radius:12px;
-
-      font-weight:800;
-
-      letter-spacing:.2px;
-
-      border:1px solid transparent;
-
-      transition:all .15s ease;
-
-      cursor:pointer;
-
-      user-select:none;
-
-      white-space:nowrap;
-
-    }
-
-    .btn-primary{
-
-      background:linear-gradient(180deg,var(--gold),var(--gold2));
-
-      color:#0B1620;
-
-      box-shadow:0 10px 22px rgba(198,167,94,.18);
-
-    }
-
-    .btn-primary:hover{transform:translateY(-1px)}
-
-    .btn-outline{
-
-      border:1px solid var(--gold);
-
-      color:var(--gold);
-
-      background:transparent;
-
-    }
-
-    .btn-outline:hover{
-
-      background:var(--gold);
-
-      color:#0B1620;
-
-    }
-
-    .btn-muted{
-
-      border:1px solid rgba(255,255,255,.15);
-
-      color:var(--text);
-
-      background:rgba(255,255,255,.04);
-
-    }
-
-    .btn-muted:hover{background:rgba(255,255,255,.08)}
-
-    /* Hero */
-
-    .hero{
-
-      padding:130px 0 105px;
-
-      background:
-
-        linear-gradient(rgba(8,16,24,.72), rgba(8,16,24,.93)),
-
-        url("offshore-platform.jpg") center/cover no-repeat;
-
-      border-bottom:1px solid var(--border);
-
-    }
-
-    .eyebrow{
-
-      color:var(--muted);
-
-      font-weight:700;
-
-      letter-spacing:.18px;
-
-      margin:0 0 10px;
-
-    }
-
-    h1{
-
-      font-size:56px;
-
-      line-height:1.05;
-
-      margin:0 0 18px;
-
-      max-width:980px;
-
-    }
-
-    .lead{
-
-      color:var(--muted);
-
-      font-size:18px;
-
-      max-width:880px;
-
-      margin:0 0 26px;
-
-    }
-
-    .hero-actions{
-
-      display:flex;
-
-      gap:12px;
-
-      flex-wrap:wrap;
-
-      margin-top:18px;
-
-    }
-
-    .kpis{
-
-      display:flex;
-
-      gap:14px;
-
-      flex-wrap:wrap;
-
-      margin-top:26px;
-
-    }
-
-    .kpi{
-
-      background:rgba(15,36,51,.55);
-
-      border:1px solid var(--border);
-
-      border-radius:14px;
-
-      padding:12px 14px;
-
-      min-width:240px;
-
-      box-shadow:var(--shadow);
-
-    }
-
-    .kpi .label{
-
-      color:var(--muted);
-
-      font-size:12px;
-
-      font-weight:800;
-
-      letter-spacing:.5px;
-
-      text-transform:uppercase;
-
-      margin:0 0 4px;
-
-    }
-
-    .kpi .value{
-
-      font-weight:900;
-
-      font-size:15px;
-
-      margin:0;
-
-    }
-
-    /* Headings */
-
-    h2{font-size:36px;margin:0 0 18px}
-
-    h3{font-size:22px;margin:0 0 10px}
-
-    .sub{
-
-      color:var(--muted);
-
-      max-width:900px;
-
-      margin:0 0 30px;
-
-    }
-
-    /* Panels / Cards / Grid */
-
-    .panel{
-
-      background:var(--panel);
-
-      border:1px solid var(--border);
-
-      border-radius:var(--radius);
-
-      padding:34px;
-
-      box-shadow:var(--shadow);
-
-    }
-
-    .grid{
-
-      display:grid;
-
-      grid-template-columns:repeat(3,1fr);
-
-      gap:22px;
-
-    }
-
-    .card{
-
-      background:rgba(15,36,51,.80);
-
-      border:1px solid var(--border);
-
-      border-radius:var(--radius);
-
-      padding:28px;
-
-      box-shadow:var(--shadow);
-
-      min-height:260px;
-
-      display:flex;
-
-      flex-direction:column;
-
-      justify-content:space-between;
-
-    }
-
-    .card p{color:var(--muted);margin:0 0 14px}
-
-    .price{
-
-      color:var(--gold);
-
-      font-weight:900;
-
-      margin:14px 0 0;
-
-    }
-
-    .card .cta{margin-top:18px}
-
-    /* Split */
-
-    .split{
-
-      display:grid;
-
-      grid-template-columns:1.2fr .8fr;
-
-      gap:22px;
-
-      align-items:start;
-
-    }
-
-    /* Legal */
-
-    .legal{
-
-      background:rgba(15,36,51,.55);
-
-      border:1px solid var(--border);
-
-      border-radius:var(--radius);
-
-      padding:22px;
-
-      box-shadow:var(--shadow);
-
-    }
-
-    .legal strong{color:var(--text)}
-
-    .legal p{color:var(--muted);margin:10px 0 0}
-
-    /* Footer */
-
-    .footer{
-
-      padding:44px 0;
-
-      border-top:1px solid var(--border);
-
-      background:rgba(8,16,24,.95);
-
-    }
-
-    .footer .cols{
-
-      display:grid;
-
-      grid-template-columns:1.2fr .8fr;
-
-      gap:18px;
-
-    }
-
-    .footer .small{color:var(--muted);font-size:13px;line-height:1.6}
-
-    .footer a{color:var(--gold);border-bottom:1px solid rgba(198,167,94,.35)}
-
-    .footer a:hover{border-bottom-color:var(--gold)}
-
-    /* Responsive */
-
-    @media (max-width: 1020px){
-
-      h1{font-size:44px}
-
-      .grid{grid-template-columns:1fr}
-
-      .split{grid-template-columns:1fr}
-
-      .kpi{min-width:unset;width:100%}
-
-      .footer .cols{grid-template-columns:1fr}
-
-      .navlinks{gap:10px}
-
-    }
-
-  </style>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOS Maritime Group Limited</title>
+<meta name="description" content="MOS Maritime Group Limited — Offshore commercial diving strategy & progression advisory. Entry pathway structuring, offshore career positioning, saturation progression planning.">
+
+<style>
+:root{
+  --bg:#0B1620;
+  --panel:#0F2230;
+  --panel2:#0C1B28;
+  --text:#E6EDF3;
+  --muted:#9FB3C8;
+  --border:#1B3A52;
+  --gold:#C6A75E;
+  --shadow:0 12px 34px rgba(0,0,0,.32);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{color:inherit;text-decoration:none}
+
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+.section{padding:92px 0}
+
+h1{font-size:56px;letter-spacing:.6px;line-height:1.05;margin:0 0 14px}
+h2{font-size:34px;margin:0 0 22px}
+h3{font-size:20px;margin:0 0 10px}
+
+.small{font-size:14px;color:var(--muted)}
+.muted{color:var(--muted)}
+.hr{height:1px;background:rgba(27,58,82,.75);margin:26px 0}
+
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border:1px solid rgba(198,167,94,.35);
+  color:var(--gold);
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.4px;
+  margin-bottom:14px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:8px;
+  font-weight:800;
+  letter-spacing:.2px;
+  cursor:pointer;
+}
+
+.btn-primary{background:var(--gold);color:var(--bg);border:1px solid var(--gold)}
+.btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.btn-outline:hover{background:var(--gold);color:var(--bg)}
+.btn-muted{background:transparent;color:var(--text);border:1px solid rgba(159,179,200,.35)}
+.btn-muted:hover{border-color:rgba(198,167,94,.6);color:var(--gold)}
+
+.grid{display:grid;gap:18px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+
+@media (max-width:980px){
+  h1{font-size:42px}
+  .grid-3,.grid-2{grid-template-columns:1fr}
+}
+
+/* Top nav */
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  background:rgba(11,22,32,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(27,58,82,.55);
+  transition:transform .28s ease;
+}
+.nav.hide{transform:translateY(-100%)}
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 0;
+}
+.brand{
+  font-weight:900;
+  letter-spacing:.6px;
+}
+.navlinks{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.navlinks a{
+  color:var(--muted);
+  font-weight:700;
+  font-size:14px;
+}
+.navlinks a:hover{color:var(--text)}
+
+/* Hero */
+.hero{
+  padding:110px 0 86px;
+  background:
+    radial-gradient(1200px 500px at 20% 10%, rgba(198,167,94,.14), transparent 60%),
+    linear-gradient(180deg, rgba(15,34,48,.55), rgba(11,22,32,1));
+  border-bottom:1px solid rgba(27,58,82,.55);
+}
+.hero .tagline{font-size:18px;color:var(--muted);margin:0 0 14px}
+.hero .subtext{max-width:900px;margin:0 0 26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.kpis{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
+.kpi{
+  background:rgba(15,34,48,.5);
+  border:1px solid rgba(27,58,82,.55);
+  border-radius:10px;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+  min-width:220px;
+}
+.kpi .k{color:var(--muted);font-weight:800;font-size:12px;letter-spacing:.3px}
+.kpi .v{font-weight:900;margin-top:4px}
+
+/* Cards */
+.card{
+  background:var(--panel);
+  border:1px solid rgba(27,58,82,.7);
+  border-radius:12px;
+  padding:26px;
+  box-shadow:var(--shadow);
+}
+.card p{color:var(--muted);margin:0 0 12px}
+.price{color:var(--gold);font-weight:900;margin-top:14px}
+
+/* Book */
+.book-grid{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:28px;
+  align-items:center;
+}
+.book-cover img{
+  width:100%;
+  border-radius:12px;
+  border:1px solid rgba(27,58,82,.7);
+  box-shadow:var(--shadow);
+}
+.book-copy p{
+  color:var(--muted);
+  margin:0 0 14px;
+}
+.book-copy ul{
+  margin:0 0 18px;
+  padding:0 0 0 18px;
+  color:var(--muted);
+}
+.book-copy li{margin:6px 0}
+.book-actions{display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:980px){
+  .book-grid{grid-template-columns:1fr}
+  .book-cover{max-width:320px}
+}
+
+/* Alternating sections */
+.alt{background:var(--panel2);border-top:1px solid rgba(27,58,82,.55);border-bottom:1px solid rgba(27,58,82,.55)}
+
+.notice{
+  border:1px solid rgba(198,167,94,.35);
+  background:rgba(198,167,94,.06);
+  padding:18px;
+  border-radius:12px;
+}
+
+/* Footer */
+.footer{
+  border-top:1px solid rgba(27,58,82,.55);
+  background:rgba(12,27,40,.9);
+  padding:40px 0;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  gap:18px;
+}
+@media (max-width:980px){
+  .footer-grid{grid-template-columns:1fr}
+}
+.footer h3{margin:0 0 10px}
+.footer a{
+  color:var(--gold);
+  border-bottom:1px solid rgba(198,167,94,.35);
+}
+.footer a:hover{border-bottom-color:var(--gold)}
+.footer .line{color:var(--muted);margin:6px 0}
+.footer .copyright{margin-top:18px;color:var(--muted);font-size:14px}
+</style>
 </head>
 
 <body>
 
-  <!-- Sticky Header Navigation (scrolls within same page) -->
-
-  <header class="header" role="banner">
-
-    <div class="container nav">
-
+<!-- NAV -->
+<div class="nav" id="topNav">
+  <div class="container">
+    <div class="navbar">
       <div class="brand">MOS Maritime Group Limited</div>
-
-      <nav class="navlinks" aria-label="Primary">
-
+      <div class="navlinks">
         <a href="#about">About</a>
-
         <a href="#packages">Packages</a>
-
+        <a href="#book">Book</a>
         <a href="#intake">Intake</a>
-
         <a href="#contact">Contact</a>
+        <a class="btn btn-outline" href="mailto:matt@mosmaritimegroup.com?subject=MOS%20Maritime%20Group%20-%20Enquiry">Email</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <a class="btn btn-outline" href="mailto:matt@mosmaritimegroup.co.nz">Email</a>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <p class="tagline">Marine • Industrial • Offshore Advisory</p>
+    <h1>Offshore Commercial Diving Strategy &amp; Progression Advisory</h1>
+    <p class="subtext">
+      Structured advisory for individuals entering commercial diving, transitioning offshore, and planning long-term saturation progression.
+    </p>
 
-      </nav>
-
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#packages">View Packages</a>
+      <a class="btn btn-muted" href="https://docs.google.com/forms/d/e/1FAIpQLSeSpxev_UfEV0Hw6tYVcZffNSK2UAm0CsCRLTsDPu50dBk4Pg/viewform?usp=dialog" target="_blank" rel="noopener">Open Intake Form</a>
+      <a class="btn btn-outline" href="#book">View Book</a>
     </div>
 
-  </header>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="k">FOUNDER</div>
+        <div class="v">Commercial Saturation Diver</div>
+      </div>
+      <div class="kpi">
+        <div class="k">SUPERVISION</div>
+        <div class="v">IMCA Air Diving Supervisor</div>
+      </div>
+      <div class="kpi">
+        <div class="k">POSITIONING</div>
+        <div class="v">Advisory + Subcontract Services</div>
+      </div>
+    </div>
 
-  <!-- HERO -->
+    <p class="small" style="margin-top:18px;">
+      MOS Maritime Group Limited provides advisory services only. No employment placement or work guarantees are offered.
+    </p>
+  </div>
+</section>
 
-  <section class="hero" id="top">
+<!-- ABOUT -->
+<section class="section alt" id="about">
+  <div class="container">
+    <h2>About MOS Maritime Group</h2>
+    <p class="muted">
+      MOS Maritime Group Limited is a New Zealand-based marine and industrial services company founded by Matthew John Turner — Commercial Air Diver, Commercial Saturation Diver, and IMCA Air Diving Supervisor with operational experience across inshore, offshore and subsea environments.
+    </p>
+    <div class="hr"></div>
 
-    <div class="container">
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="badge">SUBCONTRACT SERVICES</div>
+        <h3>Operational Delivery</h3>
+        <p>
+          MOS undertakes subcontract operational work under separate contractual engagement with principal contractors across marine, industrial and other sectors.
+        </p>
+        <p class="small">Contractor-to-contractor delivery. Separate scope, separate terms.</p>
+      </div>
 
-      <p class="eyebrow">Marine • Industrial • Offshore Advisory</p>
+      <div class="card">
+        <div class="badge">ADVISORY SERVICES</div>
+        <h3>Structured Strategy</h3>
+        <p>
+          Paid advisory sessions focused on training pathway sequencing, capital planning, positioning, and long-term progression planning for offshore and saturation targets.
+        </p>
+        <p class="small">No recruitment representation. No job guarantees. Strategy only.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <h1>Offshore Commercial Diving Strategy &amp; Progression Advisory</h1>
+<!-- PACKAGES -->
+<section class="section" id="packages">
+  <div class="container">
+    <h2>Advisory Packages</h2>
 
-      <p class="lead">
-
-        Structured advisory for individuals entering commercial diving, transitioning offshore, and planning long-term saturation progression.
-
-      </p>
-
-      <div class="hero-actions">
-
-        <a class="btn btn-primary" href="#packages">View Packages</a>
-
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="badge">PACKAGE A</div>
+        <h3>Entry Pathway Strategy</h3>
+        <p>Training pathway comparison, medical sequencing, capital exposure and realistic employability positioning before committing funds.</p>
+        <div class="price">60 Minutes — $450 NZD</div>
         <a class="btn btn-muted" href="https://docs.google.com/forms/d/e/1FAIpQLSeSpxev_UfEV0Hw6tYVcZffNSK2UAm0CsCRLTsDPu50dBk4Pg/viewform?usp=dialog" target="_blank" rel="noopener">Open Intake Form</a>
-
-        <a class="btn btn-outline" href="mailto:matt@mosmaritimegroup.co.nz?subject=Booking%20Request%20%E2%80%93%20MOS%20Maritime%20Group">Book by Email</a>
-
+        <a class="btn btn-outline" href="mailto:matt@mosmaritimegroup.com?subject=Booking%20Request%20-%20Package%20A%20Entry%20Pathway%20Strategy">Book by Email</a>
       </div>
 
-      <div class="kpis" aria-label="Key positioning">
-
-        <div class="kpi">
-
-          <p class="label">Founder</p>
-
-          <p class="value">Commercial Saturation Diver</p>
-
-        </div>
-
-        <div class="kpi">
-
-          <p class="label">Supervision</p>
-
-          <p class="value">IMCA Air Diving Supervisor</p>
-
-        </div>
-
-        <div class="kpi">
-
-          <p class="label">Positioning</p>
-
-          <p class="value">Advisory + Subcontract Services</p>
-
-        </div>
-
+      <div class="card">
+        <div class="badge">PACKAGE B</div>
+        <h3>Offshore Career Positioning</h3>
+        <p>Logbook review, capability alignment, employer targeting and structured 3–5 year offshore progression strategy for qualified divers.</p>
+        <div class="price">60 Minutes — $450 NZD</div>
+        <a class="btn btn-muted" href="https://docs.google.com/forms/d/e/1FAIpQLSeSpxev_UfEV0Hw6tYVcZffNSK2UAm0CsCRLTsDPu50dBk4Pg/viewform?usp=dialog" target="_blank" rel="noopener">Open Intake Form</a>
+        <a class="btn btn-outline" href="mailto:matt@mosmaritimegroup.com?subject=Booking%20Request%20-%20Package%20B%20Offshore%20Career%20Positioning">Book by Email</a>
       </div>
 
+      <div class="card">
+        <div class="badge">PACKAGE C</div>
+        <h3>Saturation Progression Advisory</h3>
+        <p>Readiness assessment, sequencing strategy, and long-term planning for experienced divers targeting saturation deployment.</p>
+        <div class="price">90 Minutes — $550 NZD</div>
+        <a class="btn btn-muted" href="https://docs.google.com/forms/d/e/1FAIpQLSeSpxev_UfEV0Hw6tYVcZffNSK2UAm0CsCRLTsDPu50dBk4Pg/viewform?usp=dialog" target="_blank" rel="noopener">Open Intake Form</a>
+        <a class="btn btn-outline" href="mailto:matt@mosmaritimegroup.com?subject=Booking%20Request%20-%20Package%20C%20Saturation%20Progression%20Advisory">Book by Email</a>
+      </div>
     </div>
 
-  </section>
+    <p class="small" style="margin-top:18px;">
+      Intake is required before scheduling is confirmed. After intake review you will receive scheduling options and payment instructions.
+    </p>
+  </div>
+</section>
 
-  <!-- ABOUT -->
+<!-- BOOK -->
+<section class="section alt" id="book">
+  <div class="container">
+    <h2>The Offshore Entry Blueprint</h2>
 
-  <section class="section" id="about">
-
-    <div class="container">
-
-      <h2>About</h2>
-
-      <p class="sub">
-
-        MOS Maritime Group Limited is a New Zealand-based offshore advisory practice founded by Matthew John Turner — a commercial saturation diver and IMCA Air Diving Supervisor.
-
-      </p>
-
-      <div class="split">
-
-        <div class="panel">
-
-          <p style="margin:0 0 14px;color:var(--muted);font-weight:700">
-
-            This is not motivational coaching. This is structured maritime career strategy.
-
-          </p>
-
-          <p style="margin:0 0 14px;color:var(--muted)">
-
-            Commercial diving is capital-intensive, physically demanding and contract-driven. Poor sequencing of training, medical certification and offshore positioning can cost significant money and time.
-
-          </p>
-
-          <p style="margin:0;color:var(--muted)">
-
-            MOS Maritime Group exists to provide clarity before major financial and career decisions are made — focusing on discipline, structure and long-term progression.
-
-          </p>
-
-        </div>
-
-        <div class="legal">
-
-          <strong>Legal &amp; Operational Positioning</strong>
-
-          <p>
-
-            MOS Maritime Group Limited provides advisory services only. No employment placement or work guarantees are offered.
-
-          </p>
-
-          <p>
-
-            Advisory is distinct from any subcontract work undertaken by the director under separate contract terms.
-
-          </p>
-
-        </div>
-
+    <div class="book-grid">
+      <div class="book-cover">
+        <a href="https://www.amazon.com/Offshore-Entry-Blueprint-Actually-Commercial-ebook/dp/B0GSJCZPX8" target="_blank" rel="noopener">
+          <img src="offshore-entry-blueprint-cover.jpg" alt="The Offshore Entry Blueprint book cover">
+        </a>
       </div>
 
+      <div class="book-copy">
+        <div class="badge">NOW LIVE ON AMAZON</div>
+        <h3>What It Actually Takes to Get Hired in Commercial Diving and Offshore Oil &amp; Gas</h3>
+        <p>
+          A direct, real-world guide for aspiring divers and offshore candidates who want clarity before spending serious money on training, tickets and the wrong pathway.
+        </p>
+        <ul>
+          <li>Understand how the offshore industry actually works</li>
+          <li>Avoid the most expensive mistakes new entrants make</li>
+          <li>Get a realistic picture of training, timing and employability</li>
+        </ul>
+
+        <div class="book-actions">
+          <a class="btn btn-primary" href="https://www.amazon.com/Offshore-Entry-Blueprint-Actually-Commercial-ebook/dp/B0GSJCZPX8" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-outline" href="https://www.amazon.com/Offshore-Entry-Blueprint-Actually-Commercial-ebook/dp/B0GSJCZPX8" target="_blank" rel="noopener">View Book</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTAKE (CLICKABLE LINK + INSTRUCTIONS) -->
+<section class="section" id="intake">
+  <div class="container">
+    <h2>Intake</h2>
+    <p class="muted">
+      Complete the intake form using the link below. After submission, email to confirm your package and receive scheduling options and payment instructions.
+    </p>
+
+    <div class="notice" style="margin-top:18px;">
+      <strong>Intake Form (click to open):</strong><br>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSpxev_UfEV0Hw6tYVcZffNSK2UAm0CsCRLTsDPu50dBk4Pg/viewform?usp=dialog" target="_blank" rel="noopener">
+        https://docs.google.com/forms/d/e/1FAIpQLSeSpxev_UfEV0Hw6tYVcZffNSK2UAm0CsCRLTsDPu50dBk4Pg/viewform
+      </a>
+      <div class="hr"></div>
+      <strong>After submission:</strong><br>
+      Email <a href="mailto:matt@mosmaritimegroup.com?subject=Intake%20Submitted%20-%20MOS%20Advisory">matt@mosmaritimegroup.com</a> with subject:
+      <span style="color:var(--gold);font-weight:900;">Intake Submitted – MOS Advisory</span>
     </div>
 
-  </section>
-
-  <!-- PACKAGES -->
-
-  <section class="section" id="packages">
-
-    <div class="container">
-
-      <h2>Packages</h2>
-
-      <p class="sub">
-
-        Fixed-scope strategy sessions designed to give a clear pathway, reduce wasted spend, and improve offshore positioning. All bookings proceed via intake + email confirmation.
-
-      </p>
-
-      <div class="grid">
-
-        <div class="card">
-
-          <div>
-
-            <h3>Entry Pathway Strategy</h3>
-
-            <p>
-
-              For individuals considering commercial dive training. Evaluates training options, total capital exposure, medical requirements, certification sequencing and realistic employability timelines before committing to a provider.
-
-            </p>
-
-            <div class="price">60 Minutes — $450 NZD</div>
-
-          </div>
-
-          <div class="cta">
-
-            <a class="btn btn-outline" href="mailto:matt@mosmaritimegroup.co.nz?subject=Booking%20Request%20%E2%80%93%20Entry%20Pathway%20Strategy&body=Hi%20Matt%2C%0A%0AI%E2%80%99d%20like%20to%20book%20the%20Entry%20Pathway%20Strategy%20session.%0A%0AName%3A%0ACountry%2FTime%20Zone%3A%0AAvailability%3A%0AIntake%20submitted%3A%20Yes%2FNo%0A%0AThanks%2C">Book Session</a>
-
-          </div>
-
-        </div>
-
-        <div class="card">
-
-          <div>
-
-            <h3>Offshore Career Positioning</h3>
-
-            <p>
-
-              For qualified divers seeking offshore transition. Includes logbook review, capability alignment, employer positioning strategy and structured 3–5 year offshore development planning to improve contract viability.
-
-            </p>
-
-            <div class="price">60 Minutes — $450 NZD</div>
-
-          </div>
-
-          <div class="cta">
-
-            <a class="btn btn-outline" href="mailto:matt@mosmaritimegroup.co.nz?subject=Booking%20Request%20%E2%80%93%20Offshore%20Career%20Positioning&body=Hi%20Matt%2C%0A%0AI%E2%80%99d%20like%20to%20book%20the%20Offshore%20Career%20Positioning%20session.%0A%0AName%3A%0ACountry%2FTime%20Zone%3A%0AAvailability%3A%0AIntake%20submitted%3A%20Yes%2FNo%0A%0AThanks%2C">Book Session</a>
-
-          </div>
-
-        </div>
-
-        <div class="card">
-
-          <div>
-
-            <h3>Saturation Progression Advisory</h3>
-
-            <p>
-
-              For experienced divers targeting long-term saturation careers. Focused on progression sequencing, capability development, deployment timing, financial modelling and readiness evaluation.
-
-            </p>
-
-            <div class="price">90 Minutes — $550 NZD</div>
-
-          </div>
-
-          <div class="cta">
-
-            <a class="btn btn-outline" href="mailto:matt@mosmaritimegroup.co.nz?subject=Booking%20Request%20%E2%80%93%20Saturation%20Progression%20Advisory&body=Hi%20Matt%2C%0A%0AI%E2%80%99d%20like%20to%20book%20the%20Saturation%20Progression%20Advisory%20session.%0A%0AName%3A%0ACountry%2FTime%20Zone%3A%0AAvailability%3A%0AIntake%20submitted%3A%20Yes%2FNo%0A%0AThanks%2C">Book Session</a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <div style="height:22px"></div>
-
-      <div class="panel">
-
-        <h3 style="margin:0 0 10px">Structured Mentorship Programme</h3>
-
-        <p style="margin:0;color:var(--muted)">
-
-          A selective three-month advisory engagement for accelerated progression. Includes an initial deep strategy session, monthly progression reviews, logbook positioning oversight and long-term capability development mapping.
-
-        </p>
-
-        <div class="price">3 Months — $1,500 NZD</div>
-
-        <div style="margin-top:18px">
-
-          <a class="btn btn-primary" href="mailto:matt@mosmaritimegroup.co.nz?subject=Enquiry%20%E2%80%93%20Structured%20Mentorship%20Programme&body=Hi%20Matt%2C%0A%0AI%E2%80%99d%20like%20to%20enquire%20about%20the%20Structured%20Mentorship%20Programme.%0A%0AName%3A%0ACountry%2FTime%20Zone%3A%0ACurrent%20qualification%20level%3A%0AKey%20goal%20(12%20months)%3A%0AIntake%20submitted%3A%20Yes%2FNo%0A%0AThanks%2C">Enquire by Email</a>
-
-        </div>
-
-      </div>
-
-      <div style="height:22px"></div>
-
-      <div class="panel">
-
-        <h3 style="margin:0 0 10px">Commercial Diving Entry Blueprint</h3>
-
-        <p style="margin:0;color:var(--muted)">
-
-          A structured digital document outlining training comparisons (NZ / Australia / International), cost modelling, certification sequencing and financial risk considerations for aspiring commercial divers.
-
-        </p>
-
-        <div class="price">Digital Access — $197 NZD</div>
-
-        <div style="margin-top:18px">
-
-          <a class="btn btn-outline" href="mailto:matt@mosmaritimegroup.co.nz?subject=Purchase%20Request%20%E2%80%93%20Commercial%20Diving%20Entry%20Blueprint&body=Hi%20Matt%2C%0A%0AI%E2%80%99d%20like%20to%20purchase%20the%20Commercial%20Diving%20Entry%20Blueprint.%0A%0AName%3A%0ACountry%3A%0AEmail%20for%20delivery%3A%0A%0APlease%20send%20payment%20instructions.%0A%0AThanks%2C">Request Purchase</a>
-
-        </div>
-
-      </div>
-
+    <a class="btn btn-primary" style="margin-top:18px;"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSeSpxev_UfEV0Hw6tYVcZffNSK2UAm0CsCRLTsDPu50dBk4Pg/viewform?usp=dialog"
+       target="_blank" rel="noopener">Open Intake Form</a>
+
+    <a class="btn btn-outline" style="margin-top:18px;margin-left:10px;"
+       href="mailto:matt@mosmaritimegroup.com?subject=Intake%20Submitted%20-%20MOS%20Advisory">Email After Submission</a>
+  </div>
+</section>
+
+<!-- LEGAL -->
+<section class="section" id="legal">
+  <div class="container">
+    <h2>Legal &amp; Operational Positioning</h2>
+
+    <div class="notice">
+      <strong>MOS Maritime Group Limited provides advisory services only.</strong><br>
+      No employment placement, recruitment representation, agency relationship, partnership, or work guarantees are offered or implied.
     </div>
 
-  </section>
+    <div class="hr"></div>
 
-  <!-- INTAKE -->
+    <p class="muted">
+      Advisory engagements are informational and strategic in nature. Final employment, contractual engagement and training decisions remain the responsibility of the individual.
+    </p>
+    <p class="muted">
+      Separately, MOS Maritime Group Limited undertakes subcontract operational work under contractual engagement with principal contractors across marine, industrial and other sectors.
+    </p>
+  </div>
+</section>
 
-  <section class="section" id="intake">
+<!-- CONTACT SECTION (for navigation) -->
+<section class="section alt contact" id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="muted">For subcontract services or advisory bookings:</p>
+    <p><strong>Email:</strong> <a href="mailto:matt@mosmaritimegroup.com">matt@mosmaritimegroup.com</a></p>
+    <a class="btn btn-outline" href="mailto:matt@mosmaritimegroup.com?subject=MOS%20Maritime%20Group%20-%20Booking%20Enquiry">Send Booking Enquiry</a>
+    <a class="btn btn-muted" href="#top" style="margin-left:10px;">Back to Top</a>
+  </div>
+</section>
 
-    <div class="container">
-
-      <h2>Intake</h2>
-
-      <p class="sub">
-
-        Complete the intake form first. Once submitted, email to request booking times and payment instructions.
-
-      </p>
-
-      <div class="panel">
-
-        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:flex-start">
-
-          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeSpxev_UfEV0Hw6tYVcZffNSK2UAm0CsCRLTsDPu50dBk4Pg/viewform?usp=dialog" target="_blank" rel="noopener">Open Intake Form</a>
-
-          <a class="btn btn-outline" href="mailto:matt@mosmaritimegroup.co.nz?subject=Intake%20Submitted%20%E2%80%93%20Booking%20Request&body=Hi%20Matt%2C%0A%0AI%E2%80%99ve%20submitted%20the%20intake%20form%20and%20would%20like%20to%20book%20a%20session.%0A%0ARequested%20package%3A%20Entry%20%2F%20Offshore%20%2F%20Saturation%0AAvailability%20(next%207%20days)%3A%0ATime%20zone%3A%0A%0AThanks%2C">Email After Intake</a>
-
-          <a class="btn btn-muted" href="#contact">Go to Contact</a>
-
-        </div>
-
-        <p class="small" style="margin:18px 0 0">
-
-          Recommended email subject after submission: <strong>“Intake Submitted – Booking Request”</strong>
-
-        </p>
-
+<!-- FOOTER (FULL CONTACT DETAILS) -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>MOS Maritime Group Limited</h3>
+        <div class="line">Marine, Industrial & Offshore Advisory</div>
+        <div class="line">Commercial Saturation Diver • IMCA Air Diving Supervisor</div>
       </div>
 
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-
-  <section class="section" id="contact">
-
-    <div class="container">
-
-      <h2>Contact</h2>
-
-      <p class="sub">
-
-        Direct contact for advisory enquiries, booking confirmation, and payment instructions.
-
-      </p>
-
-      <div class="panel">
-
-        <p style="margin:0 0 10px;color:var(--muted)">
-
-          MOS Maritime Group Limited provides advisory services only. No employment placement or work guarantees are offered.
-
-        </p>
-
-        <p style="margin:0 0 8px">
-
-          <strong>Email:</strong>
-
-          <a href="mailto:matt@mosmaritimegroup.co.nz" style="color:var(--gold);border-bottom:1px solid rgba(198,167,94,.35)">matt@mosmaritimegroup.co.nz</a>
-
-        </p>
-
-        <p style="margin:0 0 14px">
-
-          <strong>Phone:</strong>
-
-          <a href="tel:+6421712442" style="color:var(--gold);border-bottom:1px solid rgba(198,167,94,.35)">+64 21 712 442</a>
-
-          <span style="color:var(--muted)"> (NZ: 021 712 442)</span>
-
-        </p>
-
-        <div style="display:flex;gap:12px;flex-wrap:wrap">
-
-          <a class="btn btn-outline" href="mailto:matt@mosmaritimegroup.co.nz?subject=General%20Enquiry%20%E2%80%93%20MOS%20Maritime%20Group&body=Hi%20Matt%2C%0A%0AI%E2%80%99d%20like%20to%20enquire%20about%20your%20advisory%20services.%0A%0AName%3A%0ACountry%2FTime%20Zone%3A%0AQuestion%3A%0A%0AThanks%2C">Send Enquiry</a>
-
-          <a class="btn btn-muted" href="#top">Back to Top</a>
-
-        </div>
-
+      <div>
+        <h3>Contact</h3>
+        <div class="line"><strong>Email:</strong> <a href="mailto:matt@mosmaritimegroup.com">matt@mosmaritimegroup.com</a></div>
+        <div class="line"><strong>Book:</strong> <a href="https://www.amazon.com/Offshore-Entry-Blueprint-Actually-Commercial-ebook/dp/B0GSJCZPX8" target="_blank" rel="noopener">Buy on Amazon</a></div>
+        <div class="line"><strong>Intake Form:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSpxev_UfEV0Hw6tYVcZffNSK2UAm0CsCRLTsDPu50dBk4Pg/viewform?usp=dialog" target="_blank" rel="noopener">Open Intake</a></div>
       </div>
 
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-
-  <footer class="footer" role="contentinfo">
-
-    <div class="container">
-
-      <div class="cols">
-
-        <div>
-
-          <div style="font-weight:900;margin-bottom:8px">MOS Maritime Group Limited</div>
-
-          <div class="small">
-
-            Offshore Commercial Diving Strategy &amp; Progression Advisory.
-
-          </div>
-
-        </div>
-
-        <div class="small">
-
-          <div><strong>Contact</strong></div>
-
-          <div>Email: <a href="mailto:matt@mosmaritimegroup.co.nz">matt@mosmaritimegroup.co.nz</a></div>
-
-          <div>Phone: <a href="tel:+6421712442">+64 21 712 442</a></div>
-
-          <div style="margin-top:10px">
-
-            Advisory services only. No employment placement or work guarantees are offered.
-
-          </div>
-
-          <div style="margin-top:10px">
-
-            © <span id="year"></span> MOS Maritime Group Limited. All rights reserved.
-
-          </div>
-
-        </div>
-
+      <div>
+        <h3>Legal</h3>
+        <div class="line">Advisory services only.</div>
+        <div class="line">No employment placement or work guarantees.</div>
+        <div class="line">Subcontract operational work delivered under separate contracts.</div>
       </div>
-
     </div>
 
-  </footer>
+    <div class="copyright">
+      © MOS Maritime Group Limited. All rights reserved.
+    </div>
+  </div>
+</footer>
 
-  <script>
+<script>
+  let lastScrollY = window.scrollY;
+  const nav = document.getElementById('topNav');
 
-    // footer year
+  window.addEventListener('scroll', function(){
+    const currentScrollY = window.scrollY;
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+    if (currentScrollY > 120 && currentScrollY > lastScrollY) {
+      nav.classList.add('hide');
+    } else {
+      nav.classList.remove('hide');
+    }
 
-  </script>
+    lastScrollY = currentScrollY;
+  });
+</script>
 
 </body>
-
 </html>
+:::
