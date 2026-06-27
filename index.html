@@ -398,27 +398,6 @@ h3{font-size:20px;margin:0 0 10px}
   </div>
 </section>
 
-<!-- LEGAL -->
-<section class="section" id="legal">
-  <div class="container">
-    <h2>Legal &amp; Operational Positioning</h2>
-
-    <div class="notice">
-      <strong>MOS Maritime Group Limited provides advisory services only.</strong><br>
-      No employment placement, recruitment representation, agency relationship, partnership, or work guarantees are offered or implied.
-    </div>
-
-    <div class="hr"></div>
-
-    <p class="muted">
-      Advisory engagements are informational and strategic in nature. Final employment, contractual engagement and training decisions remain the responsibility of the individual.
-    </p>
-    <p class="muted">
-      Separately, MOS Maritime Group Limited undertakes subcontract operational work under contractual engagement with principal contractors across marine, industrial and other sectors.
-    </p>
-  </div>
-</section>
-
 <!-- CONTACT SECTION (for navigation) -->
 <section class="section alt contact" id="contact">
   <div class="container">
@@ -462,22 +441,21 @@ h3{font-size:20px;margin:0 0 10px}
 </footer>
 
 <script>
-  let lastScrollY = window.scrollY;
-  const nav = document.getElementById('topNav');
+  let lastScrollTop = 0;
+  const topNav = document.getElementById('topNav');
 
-  window.addEventListener('scroll', function(){
-    const currentScrollY = window.scrollY;
+  window.addEventListener('scroll', function () {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScrollY > 120 && currentScrollY > lastScrollY) {
-      nav.classList.add('hide');
+    if (scrollTop > lastScrollTop && scrollTop > 80) {
+      topNav.classList.add('hide');
     } else {
-      nav.classList.remove('hide');
+      topNav.classList.remove('hide');
     }
 
-    lastScrollY = currentScrollY;
-  });
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  }, { passive:true });
 </script>
 
 </body>
 </html>
-:::
